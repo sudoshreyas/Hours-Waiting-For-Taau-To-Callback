@@ -1,42 +1,71 @@
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
 .container {
-  text-align: center;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .profile-pic {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover .profile-pic {
+    transform: scale(1.1);
 }
 
 .text {
-  font-size: 1.2em;
-  color: #333;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#hours {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff6347;
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 @media (max-width: 600px) {
-  .container {
-      padding: 15px;
-  }
+    .container {
+        padding: 15px;
+    }
 
-  .text {
-      font-size: 1em;
-  }
+    .text {
+        font-size: 1em;
+    }
+
+    #hours {
+        font-size: 1.5em;
+    }
 }
