@@ -1,20 +1,14 @@
-const startTime = new Date('2024-07-27T22:23:00');
+// Set the start time (replace with your desired start time)
+const startTime = new Date('2024-07-27T21:35:00').getTime();
 
-// Function to calculate the hours difference
-function calculateHours() {
-    const currentTime = new Date();
-    const timeDifference = currentTime - startTime;
-    const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
-    return hoursDifference;
-}
-
-// Update the hours on the page
 function updateHours() {
-    const hoursElement = document.getElementById('hours');
-    const hours = calculateHours();
-    hoursElement.textContent = hours;
+    const currentTime = new Date().getTime();
+    const elapsedTime = currentTime - startTime;
+    const elapsedHours = Math.floor(elapsedTime / (1000 * 60 * 60));
+
+    document.getElementById('hours').textContent = elapsedHours;
 }
 
-// Initial update and set interval to update every hour
+// Update the hours immediately and then every second
 updateHours();
-setInterval(updateHours, 3600000); // 3600000ms = 1 hour
+setInterval(updateHours, 1000);
